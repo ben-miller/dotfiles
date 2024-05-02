@@ -1,0 +1,7 @@
+/opt/homebrew/Caskroom/miniconda/base
+/opt/homebrew/anaconda3
+/opt/homebrew/Caskroom/miniconda/base/envs/paper
+/opt/homebrew/Caskroom/miniconda/base/envs/infra
+/opt/homebrew/Caskroom/miniconda/base/envs/infra2
+/opt/homebrew/Caskroom/miniconda/base/envs/beancount
+/opt/homebrew/Caskroom/miniconda/base/envs/grist-utils
