@@ -1,0 +1,11 @@
+.DS_Store
+.envrc
+.idea
+.bash_history
+.#*
+*.swp
+*.log
+*.iml
+*.ipr
+*.iws
+

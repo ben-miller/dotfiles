@@ -1,0 +1,51 @@
+[alias]
+  st = status
+  c = commit
+  cam = commit --amend
+  co = checkout
+  cob = checkout -b
+  cod = checkout develop
+  rbd = rebase develop
+  d = diff
+  br = branch
+  pl = pull
+  ps = push
+  psf = push -f
+  rb = rebase
+  rs = reset
+  a = add
+  l = log
+  a = add
+  ee = add .
+  ac = autocommit
+  upd = commit -m "Update"
+  lnt = commit -m "Satisfy\\ linter"
+  wip = commit -m "WIP"
+  skip = commit -m 'WIP [ci skip]'
+  pop = stash pop
+  sh = stash
+  sv = save
+  aliases = config --get-regexp ^alias
+[core]
+	excludesfile = /Users/bmiller/.gitignore_global
+	editor = vim -c 'startinsert'
+[user]
+	name = Benjamin Miller
+	email = benmiller179@gmail.com
+[pull]
+	ff = only
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/bmiller/.stCommitMsg
+[push]
+	autoSetupRemote = true
