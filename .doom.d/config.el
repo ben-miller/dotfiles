@@ -109,6 +109,12 @@
 (map! :map global-map
       :n "s-l" #'windmove-right)
 
+(map! :map global-map
+      :n "s-k" #'windmove-up)
+
+(map! :map global-map
+      :n "s-j" #'windmove-down)
+
 (defun split-and-balance-windows-right ()
   "Split the window to the right and balance all windows."
   (interactive)  ; Makes the function callable via a key binding
