@@ -120,3 +120,5 @@
 
 (map! :map global-map
       "s-," (lambda () (interactive) (tab-new) (find-file "~/.doom.d/config.el")))
+
+(setq leetcode-prefer-language "java")
