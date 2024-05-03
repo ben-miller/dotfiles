@@ -117,3 +117,6 @@
 
 (map! :map global-map
       :n "s-d" #'split-and-balance-windows-right)
+
+(map! :map global-map
+      "s-," (lambda () (interactive) (tab-new) (find-file "~/.doom.d/config.el")))
