@@ -130,5 +130,6 @@
 (setq leetcode-prefer-language "java")
 
 (use-package! expand-region
-  :bind ("M-k" . er/expand-region))
-
+  :bind ("M-k" . er/expand-region)
+  :bind ("M-j" . er/contract-region)
+  )
