@@ -106,7 +106,33 @@
       (balance-windows))
     ))
 
+(defun my-list-windows ()
+  "List all windows in the current tab along with their widths."
+  (interactive)
+  (let ((window-info '()))
+    (walk-windows
+     (lambda (w)
+       (push (format "%s (width: %d)" (buffer-name (window-buffer w)) (window-width w)) window-info))
+     nil t)
+    (message "Windows in current tab: %s" (mapconcat 'identity window-info ", "))))
 
+(defun window-is-maximized ()
+  "Check if any window in the current tab has a width under 16 characters."
+  (cl-some (lambda (w) (< (window-width w) 16))
+           (window-list)))
+
+(defun toggle-maximize-window ()
+  "Toggle the maximization state of the current window."
+  (interactive)
+  (if (window-is-maximized)
+      (balance-windows)    ; If the window is maximized, balance the windows.
+      (maximize-window)))  ; If the window is not maximized, maximize it.
+
+(defun move-and-maybe-maximize (move-fn)
+  "Move using the lambda function MOVE-FN and maximize if the window is already maximized."
+  (funcall move-fn)
+  (when (window-is-maximized)
+    (maximize-window)))
 
 (map! :map global-map
       "s-S-<right>" #'tab-bar-move-tab
@@ -115,15 +141,16 @@
       "s-<left>" #'tab-bar-switch-to-prev-tab
       "s-t" #'open-scratch-in-new-tab
       "s-w" #'tab-bar-close-tab
-      "s-h" #'windmove-left
-      "s-l" #'windmove-right
-      "s-k" #'windmove-up
-      "s-j" #'windmove-down
+      "s-h" (lambda () (interactive) (move-and-maybe-maximize (lambda () (windmove-left))))
+      "s-l" (lambda () (interactive) (move-and-maybe-maximize (lambda () (windmove-right))))
+      "s-k" (lambda () (interactive) (move-and-maybe-maximize (lambda () (windmove-up))))
+      "s-j" (lambda () (interactive) (move-and-maybe-maximize (lambda () (windmove-down))))
       "s-d" #'split-and-balance-windows-vertically
       "s-D" #'split-and-balance-windows-horizontally
       "s-w" #'close-window-or-tab
       "s-[" #'previous-buffer
       "s-]" #'next-buffer
+      "s-K" #'toggle-maximize-window
       )
 
 (map! :map global-map
