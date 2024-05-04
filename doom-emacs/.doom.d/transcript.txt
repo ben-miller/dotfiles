@@ -1,0 +1,40 @@
+Welcome to ChatGPT shell
+
+  Type help and press RET for details.
+
+  Like this package? Consider ✨sponsoring✨
+
+
+<shell-maker-failed-command>
+ChatGPT(4-0125-preview/General)> sup
+
+Variable `chatgpt-shell-openai-key' needs to be set to your key.
+
+Try M-x set-variable chatgpt-shell-openai-key
+
+or
+
+(setq chatgpt-shell-openai-key "my-key")
+
+ChatGPT(4-0125-preview/General)> 
+Variable `chatgpt-shell-openai-key' needs to be set to your key.
+
+Try M-x set-variable chatgpt-shell-openai-key
+
+or
+
+(setq chatgpt-shell-openai-key "my-key")
+
+ChatGPT(4-0125-preview/General)> 
+
+ChatGPT(4-0125-preview/General)> sup
+<shell-maker-end-of-prompt>
+We could not parse the JSON body of your request. (HINT: This likely means you aren't using your HTTP library correctly. The OpenAI API expects a JSON payload, but what was sent was not valid JSON. If you have trouble figuring out how to fix this, please contact us through our help center at help.openai.com.)
+
+
+<shell-maker-failed-command>
+ChatGPT(4-0125-preview/General)> 
+
+ChatGPT(4-0125-preview/General)> 
+
+ChatGPT(4-0125-preview/General)> 

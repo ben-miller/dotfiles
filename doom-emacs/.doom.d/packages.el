@@ -54,3 +54,7 @@
 (package! leetcode
   :recipe (:host github :repo "kaiwk/leetcode.el"))
 (package! expand-region)
+(package! shell-maker
+  :recipe (:host github :repo "xenodium/chatgpt-shell" :files ("shell-maker.el")))
+(package! chatgpt-shell
+  :recipe (:host github :repo "xenodium/chatgpt-shell" :files ("chatgpt-shell.el")))

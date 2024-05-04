@@ -162,3 +162,33 @@
   :bind ("M-k" . er/expand-region)
   :bind ("M-j" . er/contract-region)
   )
+
+;; Use macOS Keychain for auth-source
+(after! auth-source
+  (setq auth-sources '(macos-keychain-internet macos-keychain-generic)))
+
+(require 'auth-source)
+(let ((credential (auth-source-search :host "api.openai.com" :user "john.doe" :max 1)))
+  (if credential
+      (let ((secret (plist-get (car credential) :secret)))
+        (setq chatgpt-shell-openai-key (if (functionp secret) (funcall secret) secret)))
+    (error "API key not found in keychain!")))
+
+(use-package! chatgpt-shell
+  :after shell-maker)
+
+(require 'shell-maker)
+
+(defvar greeter-shell--config
+  (make-shell-maker-config
+   :name "Greeter"
+   :execute-command
+   (lambda (command _history callback error-callback)
+     (funcall callback
+              (format "Hello \"%s\"" command)
+              nil))))
+
+(defun greeter-shell ()
+  "Start a Greeter shell."
+  (interactive)
+  (shell-maker-start greeter-shell--config))
