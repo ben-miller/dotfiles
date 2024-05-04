@@ -117,9 +117,9 @@
 
 (defun split-and-balance-windows-right ()
   "Split the window to the right and balance all windows."
-  (interactive)  ; Makes the function callable via a key binding
-  (split-window-right)  ; Split the window to the right
-  (balance-windows))    ; Balance the size of all windows
+  (interactive)
+  (split-window-right)
+  (balance-windows))
 
 (map! :map global-map
       :n "s-d" #'split-and-balance-windows-right)
