@@ -79,41 +79,11 @@
   (setq ivy-use-virtual-buffers t
         ivy-count-format "%d/%d "))
 
-(map! :map global-map
-      :n "s-S-<right>" #'tab-bar-move-tab)
-
-(map! :map global-map
-      :n "s-S-<left>" #'tab-bar-move-tab-backward)
-
-(map! :map global-map
-      :n "s-<right>" #'tab-bar-switch-to-next-tab)
-
-(map! :map global-map
-      :n "s-<left>" #'tab-bar-switch-to-prev-tab)
-
 (defun open-scratch-in-new-tab ()
   "Open a new tab with a *scratch* buffer."
   (interactive)
   (tab-new)  ; Create a new tab
   (switch-to-buffer "*scratch*"))  ; Switch to the *scratch* buffer
-
-(map! :map global-map
-      :n "s-t" #'open-scratch-in-new-tab)
-
-(map! :map global-map
-      :n "s-w" #'tab-bar-close-tab)
-
-(map! :map global-map
-      :n "s-h" #'windmove-left)
-
-(map! :map global-map
-      :n "s-l" #'windmove-right)
-
-(map! :map global-map
-      :n "s-k" #'windmove-up)
-
-(map! :map global-map
-      :n "s-j" #'windmove-down)
 
 (defun split-and-balance-windows-right ()
   "Split the window to the right and balance all windows."
@@ -122,7 +92,37 @@
   (balance-windows))
 
 (map! :map global-map
-      :n "s-d" #'split-and-balance-windows-right)
+      "s-S-<right>" #'tab-bar-move-tab)
+
+(map! :map global-map
+      "s-S-<left>" #'tab-bar-move-tab-backward)
+
+(map! :map global-map
+      "s-<right>" #'tab-bar-switch-to-next-tab)
+
+(map! :map global-map
+      "s-<left>" #'tab-bar-switch-to-prev-tab)
+
+(map! :map global-map
+      "s-t" #'open-scratch-in-new-tab)
+
+(map! :map global-map
+      "s-w" #'tab-bar-close-tab)
+
+(map! :map global-map
+      "s-h" #'windmove-left)
+
+(map! :map global-map
+      "s-l" #'windmove-right)
+
+(map! :map global-map
+      "s-k" #'windmove-up)
+
+(map! :map global-map
+      "s-j" #'windmove-down)
+
+(map! :map global-map
+      "s-d" #'split-and-balance-windows-right)
 
 (map! :map global-map
       "s-," (lambda () (interactive) (tab-new) (find-file "~/.doom.d/config.el")))
