@@ -128,3 +128,7 @@
       "s-," (lambda () (interactive) (tab-new) (find-file "~/.doom.d/config.el")))
 
 (setq leetcode-prefer-language "java")
+
+(use-package! expand-region
+  :bind ("M-k" . er/expand-region))
+
