@@ -92,36 +92,16 @@
   (balance-windows))
 
 (map! :map global-map
-      "s-S-<right>" #'tab-bar-move-tab)
-
-(map! :map global-map
-      "s-S-<left>" #'tab-bar-move-tab-backward)
-
-(map! :map global-map
-      "s-<right>" #'tab-bar-switch-to-next-tab)
-
-(map! :map global-map
-      "s-<left>" #'tab-bar-switch-to-prev-tab)
-
-(map! :map global-map
-      "s-t" #'open-scratch-in-new-tab)
-
-(map! :map global-map
-      "s-w" #'tab-bar-close-tab)
-
-(map! :map global-map
-      "s-h" #'windmove-left)
-
-(map! :map global-map
-      "s-l" #'windmove-right)
-
-(map! :map global-map
-      "s-k" #'windmove-up)
-
-(map! :map global-map
-      "s-j" #'windmove-down)
-
-(map! :map global-map
+      "s-S-<right>" #'tab-bar-move-tab
+      "s-S-<left>" #'tab-bar-move-tab-backward
+      "s-<right>" #'tab-bar-switch-to-next-tab
+      "s-<left>" #'tab-bar-switch-to-prev-tab
+      "s-t" #'open-scratch-in-new-tab
+      "s-w" #'tab-bar-close-tab
+      "s-h" #'windmove-left
+      "s-l" #'windmove-right
+      "s-k" #'windmove-up
+      "s-j" #'windmove-down
       "s-d" #'split-and-balance-windows-right)
 
 (map! :map global-map
