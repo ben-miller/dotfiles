@@ -82,18 +82,20 @@
 (defun open-scratch-in-new-tab ()
   "Open a new tab with a *scratch* buffer."
   (interactive)
-  (tab-new)  ; Create a new tab
+  (tab-new)
   (switch-to-buffer "*scratch*"))
 
 (defun split-and-balance-windows-vertically ()
   (interactive)
   (split-window-right)
-  (balance-windows))
+  (balance-windows)
+  (select-window (next-window)))
 
 (defun split-and-balance-windows-horizontally ()
   (interactive)
   (split-window-below)
-  (balance-windows))
+  (balance-windows)
+  (select-window (next-window)))
 
 (map! :map global-map
       "s-S-<right>" #'tab-bar-move-tab
