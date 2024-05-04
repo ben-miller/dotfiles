@@ -83,12 +83,16 @@
   "Open a new tab with a *scratch* buffer."
   (interactive)
   (tab-new)  ; Create a new tab
-  (switch-to-buffer "*scratch*"))  ; Switch to the *scratch* buffer
+  (switch-to-buffer "*scratch*"))
 
-(defun split-and-balance-windows-right ()
-  "Split the window to the right and balance all windows."
+(defun split-and-balance-windows-vertically ()
   (interactive)
   (split-window-right)
+  (balance-windows))
+
+(defun split-and-balance-windows-horizontally ()
+  (interactive)
+  (split-window-below)
   (balance-windows))
 
 (map! :map global-map
@@ -102,7 +106,9 @@
       "s-l" #'windmove-right
       "s-k" #'windmove-up
       "s-j" #'windmove-down
-      "s-d" #'split-and-balance-windows-right)
+      "s-d" #'split-and-balance-windows-vertically
+      "s-D" #'split-and-balance-windows-horizontally
+      )
 
 (map! :map global-map
       "s-," (lambda () (interactive) (tab-new) (find-file "~/.doom.d/config.el")))
