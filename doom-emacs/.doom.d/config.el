@@ -97,6 +97,17 @@
   (balance-windows)
   (select-window (next-window)))
 
+(defun close-window-or-tab ()
+  (interactive)
+  (if (one-window-p)
+      (tab-close)
+    (progn
+      (delete-window)
+      (balance-windows))
+    ))
+
+
+
 (map! :map global-map
       "s-S-<right>" #'tab-bar-move-tab
       "s-S-<left>" #'tab-bar-move-tab-backward
@@ -110,6 +121,9 @@
       "s-j" #'windmove-down
       "s-d" #'split-and-balance-windows-vertically
       "s-D" #'split-and-balance-windows-horizontally
+      "s-w" #'close-window-or-tab
+      "s-[" #'previous-buffer
+      "s-]" #'next-buffer
       )
 
 (map! :map global-map
