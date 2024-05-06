@@ -151,10 +151,8 @@
       "s-[" #'previous-buffer
       "s-]" #'next-buffer
       "s-K" #'toggle-maximize-window
+      "s-," (lambda () (interactive) (tab-new) (find-file "~/.doom.d/config.el"))
       )
-
-(map! :map global-map
-      "s-," (lambda () (interactive) (tab-new) (find-file "~/.doom.d/config.el")))
 
 (map! :leader
       :desc "Show DOING items" "d d" #'org-doing-list
