@@ -162,6 +162,7 @@
       :desc "Find files in homedir" "f k" (lambda () (interactive) (counsel-find-file "~"))
       :desc "Neotree change root to homedir" "f K" (lambda () (interactive) (neotree-dir "~"))
       "f h" #'neotree-find
+      "f n" #'neotree-toggle
       )
 
 (setq leetcode-prefer-language "java")
