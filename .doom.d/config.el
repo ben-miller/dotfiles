@@ -160,6 +160,7 @@
       :desc "Show DOING items" "d d" #'org-doing-list
       :desc "Open Emacs configuration todo list" "d e" #'org-emacs-todo-list
       :desc "Find files in homedir" "f k" (lambda () (interactive) (counsel-find-file "~"))
+      :desc "Neotree change root to homedir" "f K" (lambda () (interactive) (neotree-dir "~"))
       "f h" #'neotree-find
       )
 
