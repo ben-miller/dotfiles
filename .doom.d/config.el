@@ -154,6 +154,7 @@
       "s-," (lambda () (interactive) (find-file "~/.doom.d/config.el"))
       "<backtab>" #'neotree-collapse-all
       "s-." #'neotree-hidden-file-toggle
+      "C-/" #'swiper
       )
 
 (map! :leader
