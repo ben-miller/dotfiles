@@ -171,10 +171,11 @@
 
 (after! org
   (setq org-todo-keyword-faces
-        '(("INBOX" . "#1E90FF")   ; Dodger Blue
-          ("DOING" . "#FF8C00")   ; Dark Orange
-          ("NEXT" . "#32CD32")    ; Lime Green
-          ("DONE" . "#808080")))) ; Gray
+        '(("INBOX" . "#1E90FF")
+          ("DOING" . "#FF8C00")
+          ("NEXT" . "#32CD32")
+          ("BUG" . "#EE4B2B")
+          )))
 
 (defun org-emacs-todo-list ()
     (interactive)
