@@ -162,3 +162,10 @@
   :bind ("M-k" . er/expand-region)
   :bind ("M-j" . er/contract-region)
   )
+
+(after! org
+  (setq org-todo-keyword-faces
+        '(("INBOX" . "#1E90FF")   ; Dodger Blue
+          ("DOING" . "#FF8C00")   ; Dark Orange
+          ("NEXT" . "#32CD32")    ; Lime Green
+          ("DONE" . "#808080")))) ; Gray
