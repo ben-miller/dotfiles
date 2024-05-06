@@ -151,13 +151,16 @@
       "s-[" #'previous-buffer
       "s-]" #'next-buffer
       "s-K" #'toggle-maximize-window
-      "s-," (lambda () (interactive) (tab-new) (find-file "~/.doom.d/config.el"))
+      "s-," (lambda () (interactive) (find-file "~/.doom.d/config.el"))
+      "<backtab>" #'neotree-collapse-all
+      "s-." #'neotree-hidden-file-toggle
       )
 
 (map! :leader
       :desc "Show DOING items" "d d" #'org-doing-list
       :desc "Open Emacs configuration todo list" "d e" #'org-emacs-todo-list
       :desc "Find files in homedir" "f k" (lambda () (interactive) (counsel-find-file "~"))
+      "f h" #'neotree-find
       )
 
 (setq leetcode-prefer-language "java")
@@ -186,3 +189,8 @@
         (kill-buffer buffer-name)
       (let ((org-agenda-files (org-agenda-files)))
         (org-todo-list "DOING")))))
+
+(setq neo-hidden-regexp-list '("^\\."))
+
+(setq neo-smart-open t)
+
