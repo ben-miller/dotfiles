@@ -54,3 +54,5 @@
 (package! leetcode
   :recipe (:host github :repo "kaiwk/leetcode.el"))
 (package! expand-region)
+(package! hyperbole)
+(package! org-trello)
