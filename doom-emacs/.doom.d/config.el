@@ -156,6 +156,12 @@
 (map! :map global-map
       "s-," (lambda () (interactive) (tab-new) (find-file "~/.doom.d/config.el")))
 
+(map! :leader
+      :desc "Show DOING items" "d d" #'org-doing-list
+      :desc "Open Emacs configuration todo list" "d e" #'org-emacs-todo-list
+      :desc "Find files in homedir" "f k" (lambda () (interactive) (counsel-find-file "~"))
+      )
+
 (setq leetcode-prefer-language "java")
 
 (use-package! expand-region
@@ -169,3 +175,15 @@
           ("DOING" . "#FF8C00")   ; Dark Orange
           ("NEXT" . "#32CD32")    ; Lime Green
           ("DONE" . "#808080")))) ; Gray
+
+(defun org-emacs-todo-list ()
+    (interactive)
+  (find-file "~/org/emacs.org"))
+
+(defun org-doing-list ()
+  (interactive)
+  (let ((buffer-name "*Org Agenda*"))
+    (if (get-buffer buffer-name)
+        (kill-buffer buffer-name)
+      (let ((org-agenda-files (org-agenda-files)))
+        (org-todo-list "DOING")))))
