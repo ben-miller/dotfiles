@@ -187,6 +187,7 @@
           ("DOING" . "#FF8C00")
           ("NEXT" . "#32CD32")
           ("BUG" . "#EE4B2B")
+          ("IDEA" . "#9B30FF")
           )))
 
 (defun org-emacs-todo-list ()
