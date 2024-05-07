@@ -169,6 +169,7 @@
       "f n" #'neotree-toggle
       :desc "Capture note to inbox" "d k" (lambda () (interactive) (org-capture nil "i"))
       "d f" #'org-refile
+      :desc "Edit emacs config" "d ," (lambda () (interactive) (find-file "~/.doom.d/config.el"))
       )
 
 (setq leetcode-prefer-language "java")
