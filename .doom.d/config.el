@@ -211,3 +211,7 @@
 (after! org-agenda
   (map! :map org-agenda-mode-map
         "<escape>" #'org-agenda-exit))
+
+(after! magit
+  (map! :map magit-mode-map
+        "<escape>" #'magit-mode-bury-buffer))
