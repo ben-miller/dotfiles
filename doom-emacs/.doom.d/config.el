@@ -161,11 +161,14 @@
       :desc "Show DOING items" "d d" #'org-doing-list
       :desc "Show NEXT items" "d n" #'org-next-list
       :desc "Open Emacs configuration todo list" "d e" #'org-emacs-todo-list
+      "d i" (lambda () (interactive) (find-file "~/org/inbox.org"))
       :desc "Find files in homedir" "f j" (lambda () (interactive) (counsel-find-file "~"))
       :desc "Find files in homedir" "f k" #'counsel-fzf
       :desc "Neotree change root to homedir" "f K" (lambda () (interactive) (neotree-dir "~"))
       "f h" #'neotree-find
       "f n" #'neotree-toggle
+      :desc "Capture note to inbox" "d k" (lambda () (interactive) (org-capture nil "i"))
+      "d f" #'org-refile
       )
 
 (setq leetcode-prefer-language "java")
