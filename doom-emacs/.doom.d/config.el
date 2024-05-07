@@ -159,6 +159,7 @@
 
 (map! :leader
       :desc "Show DOING items" "d d" #'org-doing-list
+      :desc "Show NEXT items" "d n" #'org-next-list
       :desc "Open Emacs configuration todo list" "d e" #'org-emacs-todo-list
       :desc "Find files in homedir" "f j" (lambda () (interactive) (counsel-find-file "~"))
       :desc "Find files in homedir" "f k" #'counsel-fzf
@@ -193,6 +194,15 @@
         (kill-buffer buffer-name)
       (let ((org-agenda-files (org-agenda-files)))
         (org-todo-list "DOING")))))
+
+(defun org-next-list ()
+  (interactive)
+  (let ((buffer-name "*Org Agenda*"))
+    (if (get-buffer buffer-name)
+        (kill-buffer buffer-name)
+      (let ((org-agenda-files (org-agenda-files)))
+        (org-todo-list "NEXT")))))
+
 
 (setq neo-hidden-regexp-list '("^\\."))
 
