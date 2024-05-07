@@ -158,8 +158,8 @@
       )
 
 (map! :leader
-      :desc "Show DOING items" "d d" #'org-doing-list
-      :desc "Show NEXT items" "d n" #'org-next-list
+      :desc "Show DOING items" "d d" (lambda () (interactive) (org-todo-list "DOING"))
+      :desc "Show NEXT items" "d n" (lambda () (interactive) (org-todo-list "NEXT"))
       :desc "Open Emacs configuration todo list" "d e" #'org-emacs-todo-list
       "d i" (lambda () (interactive) (find-file "~/org/inbox.org"))
       :desc "Find files in homedir" "f j" (lambda () (interactive) (counsel-find-file "~"))
@@ -168,8 +168,10 @@
       "f h" #'neotree-find
       "f n" #'neotree-toggle
       :desc "Capture note to inbox" "d k" (lambda () (interactive) (org-capture nil "i"))
+      :desc "Capture note to inbox as DOING" "d D" (lambda () (interactive) (org-capture nil "d"))
       "d f" #'org-refile
       :desc "Edit emacs config" "d ," (lambda () (interactive) (find-file "~/.doom.d/config.el"))
+      :desc "Dired" "SPC" #'dired
       )
 
 (setq leetcode-prefer-language "java")
@@ -191,23 +193,6 @@
     (interactive)
   (find-file "~/org/emacs.org"))
 
-(defun org-doing-list ()
-  (interactive)
-  (let ((buffer-name "*Org Agenda*"))
-    (if (get-buffer buffer-name)
-        (kill-buffer buffer-name)
-      (let ((org-agenda-files (org-agenda-files)))
-        (org-todo-list "DOING")))))
-
-(defun org-next-list ()
-  (interactive)
-  (let ((buffer-name "*Org Agenda*"))
-    (if (get-buffer buffer-name)
-        (kill-buffer buffer-name)
-      (let ((org-agenda-files (org-agenda-files)))
-        (org-todo-list "NEXT")))))
-
-
 (setq neo-hidden-regexp-list '("^\\."))
 
 (setq neo-smart-open t)
@@ -216,4 +201,13 @@
   (add-to-list 'org-capture-templates
                '("i" "Inbox item" entry
                  (file+headline "~/org/inbox.org" "Inbox")
-                 "** INBOX %?\n")))
+                 "** INBOX %?\n"))
+  (add-to-list 'org-capture-templates
+               '("d" "Inbox item" entry
+                 (file+headline "~/org/inbox.org" "Inbox")
+                 "** DOING %?\n"))
+  )
+
+(after! org-agenda
+  (map! :map org-agenda-mode-map
+        "<escape>" #'org-agenda-exit))
