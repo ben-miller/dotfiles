@@ -211,3 +211,8 @@
 
 (setq neo-smart-open t)
 
+(after! org
+  (add-to-list 'org-capture-templates
+               '("i" "Inbox item" entry
+                 (file+headline "~/org/inbox.org" "Inbox")
+                 "** INBOX %?\n")))
