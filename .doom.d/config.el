@@ -169,7 +169,8 @@
       :desc "Neotree change root to homedir" "f K" (lambda () (interactive) (neotree-dir "~"))
       "f h" #'neotree-find
       "f n" #'neotree-toggle
-      :desc "Capture note to inbox" "d k" (lambda () (interactive) (org-capture nil "i"))
+      :desc "Capture note to inbox as INBOX" "d I" (lambda () (interactive) (org-capture nil "i"))
+      :desc "Capture note to inbox as NEXT" "d N" (lambda () (interactive) (org-capture nil "n"))
       :desc "Capture note to inbox as DOING" "d D" (lambda () (interactive) (org-capture nil "d"))
       "d f" #'org-refile
       :desc "Edit emacs config" "d ," (lambda () (interactive) (find-file "~/.doom.d/config.el"))
@@ -210,6 +211,10 @@
                '("d" "Inbox item" entry
                  (file+headline "~/org/inbox.org" "Inbox")
                  "** DOING %?\n"))
+  (add-to-list 'org-capture-templates
+               '("n" "Inbox item" entry
+                 (file+headline "~/org/inbox.org" "Inbox")
+                 "** NEXT %?\n"))
   )
 
 (after! org-agenda
