@@ -99,10 +99,6 @@
       :desc "Next buffer" "s-]" #'next-buffer
       :desc "Toggle pane maximization" "s-K" #'toggle-maximize-window
 
-      ;; NeoTree.
-      ;; :desc "NeoTree collapse all" "<backtab>" #'neotree-collapse-all
-      ;; :desc "NeoTree toggle hidden" "s-." #'neotree-hidden-file-toggle
-
       ;; Swiper.
       :desc "Swiper" "C-/" #'swiper
 
