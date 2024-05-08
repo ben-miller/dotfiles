@@ -155,7 +155,7 @@
       "<backtab>" #'neotree-collapse-all
       "s-." #'neotree-hidden-file-toggle
       "C-/" #'swiper
-      :desc "Find function" "s-b" #'find-function
+      :desc "t" "s-b" #'describe-function-at-point
       :desc "Go to source of function at point" "M-s-b" #'describe-function-at-point
       )
 
@@ -169,8 +169,7 @@
       :desc "Neotree change root to homedir" "f K" (lambda () (interactive) (neotree-dir "~"))
       "f h" #'neotree-find
       "f n" #'neotree-toggle
-      :desc "Capture note to inbox as INBOX" "d I" (lambda () (interactive) (org-capture nil "i"))
-      :desc "Capture note to inbox as NEXT" "d N" (lambda () (interactive) (org-capture nil "n"))
+      :desc "Capture note to inbox" "d k" (lambda () (interactive) (org-capture nil "i"))
       :desc "Capture note to inbox as DOING" "d D" (lambda () (interactive) (org-capture nil "d"))
       "d f" #'org-refile
       :desc "Edit emacs config" "d ," (lambda () (interactive) (find-file "~/.doom.d/config.el"))
@@ -224,10 +223,6 @@ If FROM is non nil, execute the sync of the entire buffer from trello."
                '("d" "Inbox item" entry
                  (file+headline "~/org/inbox.org" "Inbox")
                  "** DOING %?\n"))
-  (add-to-list 'org-capture-templates
-               '("n" "Inbox item" entry
-                 (file+headline "~/org/inbox.org" "Inbox")
-                 "** NEXT %?\n"))
   )
 
 (after! org-agenda
