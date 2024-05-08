@@ -82,12 +82,6 @@
 (setq select-enable-clipboard nil)
 (setq select-enable-primary nil)
 
-;; Bind cmd+v to the paste function
-(global-set-key (kbd "s-v") 'paste-from-system-clipboard)
-
-;; Bind cmd+c to the copy function
-(global-set-key (kbd "s-c") 'copy-region-to-system-clipboard)
-
 ;; SPC keybindings.
 (map! :leader
       :desc "Show DOING items" "d d" (lambda () (interactive) (org-todo-list "DOING"))
@@ -130,4 +124,6 @@
       "<backtab>" #'neotree-collapse-all
       "s-." #'neotree-hidden-file-toggle
       "C-/" #'swiper
+      "s-v" #'paste-from-system-clipboard
+      "s-c" #'copy-region-to-system-clipboard
       )
