@@ -53,58 +53,58 @@
       :desc "Find files in homedir" "f j" (lambda () (interactive) (counsel-find-file "~"))
       :desc "Find files in homedir" "f k" #'counsel-fzf
       :desc "Neotree change root to homedir" "f K" (lambda () (interactive) (neotree-dir "~"))
-      "f h" #'neotree-find
-      "f n" #'neotree-toggle
+      :desc "Open currrent file in NeoTree pane" "f h" #'neotree-find
+      :desc "NeoTree toggle pane" "f n" #'neotree-toggle
       :desc "Dired" "SPC" #'dired
 
       ;; Magit.
       :desc "Magit commit -m 'Update'" "g k" #'magit-commit-update
 
       ;; Org mode (SPC d).
-      "d f" #'org-refile
+      :desc "Org refile" "d f" #'org-refile
       :desc "Show DOING items" "d d" (lambda () (interactive) (org-todo-list "DOING"))
       :desc "Show NEXT items" "d n" (lambda () (interactive) (org-todo-list "NEXT"))
       :desc "Capture note to inbox as INBOX" "d i" (lambda () (interactive) (org-capture nil "i"))
       :desc "Capture note to inbox as DOING" "d D" (lambda () (interactive) (org-capture nil "d"))
       :desc "Capture note to inbox as NEXT" "d N" (lambda () (interactive) (org-capture nil "n"))
-      "d i" (lambda () (interactive) (find-file "~/org/inbox.org"))
-      "d e" (lambda () (interactive) (find-file "~/org/emacs.org"))
+      :desc "Open inbox.org" "d i" (lambda () (interactive) (find-file "~/org/inbox.org"))
+      :desc "Open emacs.org" "d e" (lambda () (interactive) (find-file "~/org/emacs.org"))
 
       ;; Frequently edited files (SPC k).
-      :desc "Edit emacs config" "k k" (lambda () (interactive) (find-file "~/.doom.d/config.el"))
+      :desc "Edit config" "k k" (lambda () (interactive) (find-file "~/.doom.d/config.el"))
       )
 
 ;; Non-SPC key bindings.
 (map! :map global-map
       ;; Editor navigation.
-      "s-S-<right>" #'tab-bar-move-tab
-      "s-S-<left>" #'tab-bar-move-tab-backward
-      "s-<right>" #'tab-bar-switch-to-next-tab
-      "s-<left>" #'tab-bar-switch-to-prev-tab
-      "s-t" #'open-scratch-in-new-tab
-      "s-w" #'tab-bar-close-tab
-      "s-h" (lambda () (interactive) (move-and-maybe-maximize (lambda () (windmove-left))))
-      "s-l" (lambda () (interactive) (move-and-maybe-maximize (lambda () (windmove-right))))
-      "s-k" (lambda () (interactive) (move-and-maybe-maximize (lambda () (windmove-up))))
-      "s-j" (lambda () (interactive) (move-and-maybe-maximize (lambda () (windmove-down))))
-      "s-d" #'split-and-balance-windows-vertically
-      "s-D" #'split-and-balance-windows-horizontally
-      "s-w" #'close-window-or-tab
-      "s-[" #'previous-buffer
-      "s-]" #'next-buffer
-      "s-K" #'toggle-maximize-window
+      :desc "Move tab right" "s-S-<right>" #'tab-bar-move-tab
+      :desc "Move tab left" "s-S-<left>" #'tab-bar-move-tab-backward
+      :desc "Change to right tab" "s-<right>" #'tab-bar-switch-to-next-tab
+      :desc "Change to left tab" "s-<left>" #'tab-bar-switch-to-prev-tab
+      :desc "New tab (scratch)" "s-t" #'open-scratch-in-new-tab
+      :desc "Close tab" "s-w" #'tab-bar-close-tab
+      :desc "Focus pane left" "s-h" (lambda () (interactive) (move-and-maybe-maximize (lambda () (windmove-left))))
+      :desc "Focus pane right" "s-l" (lambda () (interactive) (move-and-maybe-maximize (lambda () (windmove-right))))
+      :desc "Focus pane up" "s-k" (lambda () (interactive) (move-and-maybe-maximize (lambda () (windmove-up))))
+      :desc "Focus pane down" "s-j" (lambda () (interactive) (move-and-maybe-maximize (lambda () (windmove-down))))
+      :desc "Split pane vertically" "s-d" #'split-and-balance-windows-vertically
+      :desc "Split pane horizontally" "s-D" #'split-and-balance-windows-horizontally
+      :desc "Close tab" "s-w" #'close-window-or-tab
+      :desc "Previous buffer" "s-[" #'previous-buffer
+      :desc "Next buffer" "s-]" #'next-buffer
+      :desc "Toggle pane maximization" "s-K" #'toggle-maximize-window
 
       ;; NeoTree.
-      "<backtab>" #'neotree-collapse-all
-      "s-." #'neotree-hidden-file-toggle
+      :desc "NeoTree collapse all" "<backtab>" #'neotree-collapse-all
+      :desc "NeoTree toggle hidden" "s-." #'neotree-hidden-file-toggle
 
       ;; Swiper.
-      "C-/" #'swiper
+      :desc "Swiper" "C-/" #'swiper
 
       ;; System clipboard.
-      "s-v" #'paste-from-system-clipboard
-      "s-c" #'copy-region-to-system-clipboard
+      :desc "Paste from system clipboard" "s-v" #'paste-from-system-clipboard
+      :desc "Copy to system clipboard" "s-c" #'copy-region-to-system-clipboard
 
       ;; Old habits die hard.
-      "s-," (lambda () (interactive) (find-file "~/.doom.d/config.el"))
+      :desc "Edit config" "s-," (lambda () (interactive) (find-file "~/.doom.d/config.el"))
       )
