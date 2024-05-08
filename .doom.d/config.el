@@ -36,10 +36,6 @@
   :bind ("M-j" . er/contract-region)
   )
 
-;; NeoTree
-(setq neo-hidden-regexp-list '("^\\."))
-(setq neo-smart-open t)
-
 ;; Magit
 (after! magit
   (map! :map magit-mode-map
@@ -54,9 +50,9 @@
       ;; File/directory navigation.
       :desc "Find files in homedir" "f j" (lambda () (interactive) (counsel-find-file "~"))
       :desc "Find files in homedir" "f k" #'counsel-fzf
-      :desc "Neotree change root to homedir" "f K" (lambda () (interactive) (neotree-dir "~"))
-      :desc "Open currrent file in NeoTree pane" "f h" #'neotree-find
-      :desc "NeoTree toggle pane" "f n" #'neotree-toggle
+      ;; :desc "Neotree change root to homedir" "f K" (lambda () (interactive) (neotree-dir "~"))
+      ;; :desc "Open currrent file in NeoTree pane" "f h" #'neotree-find
+      ;; :desc "NeoTree toggle pane" "f n" #'neotree-toggle
       :desc "Dired" "SPC" #'dired
 
       ;; Magit.
@@ -104,8 +100,8 @@
       :desc "Toggle pane maximization" "s-K" #'toggle-maximize-window
 
       ;; NeoTree.
-      :desc "NeoTree collapse all" "<backtab>" #'neotree-collapse-all
-      :desc "NeoTree toggle hidden" "s-." #'neotree-hidden-file-toggle
+      ;; :desc "NeoTree collapse all" "<backtab>" #'neotree-collapse-all
+      ;; :desc "NeoTree toggle hidden" "s-." #'neotree-hidden-file-toggle
 
       ;; Swiper.
       :desc "Swiper" "C-/" #'swiper
