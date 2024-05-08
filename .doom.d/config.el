@@ -2,37 +2,50 @@
 (load! "lib/inbox.el")
 (load! "lib/org-config.el")
 
+;;
+;; Emacs / doom emacs settings.
+;;
+
 ;; Theme.
 (setq doom-theme 'doom-one-light)
 
 ;; Disable line numbers.
 (setq display-line-numbers-type nil)
 
-;; Org directory.
-(setq org-directory "~/org/")
+;; Disable the system clipboard.
+(setq select-enable-clipboard nil)
+(setq select-enable-primary nil)
 
+;;
+;; Settings for random packages.
+;;
+
+;; Ivy
 (after! ivy
   (setq ivy-use-virtual-buffers t
         ivy-count-format "%d/%d "))
 
+;; LeetCode
 (setq leetcode-prefer-language "java")
 
+;; Expand-region
 (use-package! expand-region
   :bind ("M-k" . er/expand-region)
   :bind ("M-j" . er/contract-region)
   )
 
+;; NeoTree
 (setq neo-hidden-regexp-list '("^\\."))
-
 (setq neo-smart-open t)
 
+;; Magit
 (after! magit
   (map! :map magit-mode-map
         "<escape>" #'magit-mode-bury-buffer))
 
-;; Disable the system clipboard
-(setq select-enable-clipboard nil)
-(setq select-enable-primary nil)
+;;
+;; Key bindings.
+;;
 
 ;; SPC keybindings.
 (map! :leader
