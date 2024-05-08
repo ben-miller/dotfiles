@@ -1,5 +1,5 @@
 [alias]
-  st = status
+  st = status -u
   c = commit
   cam = commit --amend
   co = checkout
