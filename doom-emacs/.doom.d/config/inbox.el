@@ -86,3 +86,25 @@ If FROM is non nil, execute the sync of the entire buffer from trello."
     (let ((selection-value (buffer-substring-no-properties start end)))
       (x-set-selection 'CLIPBOARD selection-value)
       (message "Region copied to system clipboard"))))
+
+(defun gradle-test ()
+  "Run the 'test' task using the Gradle wrapper."
+  (interactive)
+  (gradle-run-from-root "test"))
+
+(defun gradle-build ()
+  "Run the 'build' task using the Gradle wrapper."
+  (interactive)
+  (gradle-run-from-root "test"))
+
+(defun gradle-run-from-root (task)
+  "Run the Gradle task `task` from the top-level directory of the current Git repository."
+  (let ((default-directory (git-root-directory)))
+    (compile (concat "./gradlew " task))))
+
+(defun git-root-directory ()
+  "Get the top-level directory of the current Git repository."
+  (let ((git-dir (locate-dominating-file default-directory ".git")))
+    (if git-dir
+        (expand-file-name git-dir)
+      (error "Not inside a Git repository"))))
