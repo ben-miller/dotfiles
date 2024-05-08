@@ -71,6 +71,10 @@
       :desc "Open inbox.org" "d i" (lambda () (interactive) (find-file "~/org/inbox.org"))
       :desc "Open emacs.org" "d e" (lambda () (interactive) (find-file "~/org/emacs.org"))
 
+      ;; Java
+      :desc "Gradle test" "j j" #'gradle-test
+      :desc "Gradle build" "j k" #'gradle-build
+
       ;; Frequently edited files (SPC k).
       :desc "Edit config" "k k" (lambda () (interactive) (find-file "~/.doom.d/config/inbox.el"))
       )
