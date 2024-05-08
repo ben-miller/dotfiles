@@ -242,3 +242,27 @@ If FROM is non nil, execute the sync of the entire buffer from trello."
   "Display the full documentation of the function at point."
   (interactive)
   (describe-function (function-called-at-point)))
+
+;; Disable the system clipboard
+(setq select-enable-clipboard nil)
+(setq select-enable-primary nil)
+
+;; Function to paste directly from the system clipboard
+(defun paste-from-system-clipboard ()
+  "Paste text from the system clipboard."
+  (interactive)
+  (insert (shell-command-to-string "pbpaste")))
+
+;; Bind cmd+v to the paste function
+(global-set-key (kbd "s-v") 'paste-from-system-clipboard)
+
+(defun copy-region-to-system-clipboard (start end)
+  "Copy the region to the system clipboard."
+  (interactive "r")
+  (when (display-graphic-p)
+    (let ((selection-value (buffer-substring-no-properties start end)))
+      (x-set-selection 'CLIPBOARD selection-value)
+      (message "Region copied to system clipboard"))))
+
+;; Bind cmd+c to the copy function
+(global-set-key (kbd "s-c") 'copy-region-to-system-clipboard)
