@@ -49,26 +49,34 @@
 
 ;; SPC keybindings.
 (map! :leader
-      :desc "Show DOING items" "d d" (lambda () (interactive) (org-todo-list "DOING"))
-      :desc "Show NEXT items" "d n" (lambda () (interactive) (org-todo-list "NEXT"))
-      :desc "Open Emacs configuration todo list" "d e" #'org-emacs-todo-list
-      "d i" (lambda () (interactive) (find-file "~/org/inbox.org"))
+      ;; File/directory navigation.
       :desc "Find files in homedir" "f j" (lambda () (interactive) (counsel-find-file "~"))
       :desc "Find files in homedir" "f k" #'counsel-fzf
       :desc "Neotree change root to homedir" "f K" (lambda () (interactive) (neotree-dir "~"))
       "f h" #'neotree-find
       "f n" #'neotree-toggle
+      :desc "Dired" "SPC" #'dired
+
+      ;; Magit.
+      :desc "Magit commit -m 'Update'" "g k" #'magit-commit-update
+
+      ;; Org mode (SPC d).
+      "d f" #'org-refile
+      :desc "Show DOING items" "d d" (lambda () (interactive) (org-todo-list "DOING"))
+      :desc "Show NEXT items" "d n" (lambda () (interactive) (org-todo-list "NEXT"))
       :desc "Capture note to inbox as INBOX" "d i" (lambda () (interactive) (org-capture nil "i"))
       :desc "Capture note to inbox as DOING" "d D" (lambda () (interactive) (org-capture nil "d"))
       :desc "Capture note to inbox as NEXT" "d N" (lambda () (interactive) (org-capture nil "n"))
-      "d f" #'org-refile
-      :desc "Edit emacs config" "d ," (lambda () (interactive) (find-file "~/.doom.d/config.el"))
-      :desc "Dired" "SPC" #'dired
-      :desc "Magit commit -m 'Update'" "g k" #'magit-commit-update
+      "d i" (lambda () (interactive) (find-file "~/org/inbox.org"))
+      "d e" (lambda () (interactive) (find-file "~/org/emacs.org"))
+
+      ;; Frequently edited files (SPC k).
+      :desc "Edit emacs config" "k k" (lambda () (interactive) (find-file "~/.doom.d/config.el"))
       )
 
 ;; Non-SPC key bindings.
 (map! :map global-map
+      ;; Editor navigation.
       "s-S-<right>" #'tab-bar-move-tab
       "s-S-<left>" #'tab-bar-move-tab-backward
       "s-<right>" #'tab-bar-switch-to-next-tab
@@ -85,10 +93,18 @@
       "s-[" #'previous-buffer
       "s-]" #'next-buffer
       "s-K" #'toggle-maximize-window
-      "s-," (lambda () (interactive) (find-file "~/.doom.d/config.el"))
+
+      ;; NeoTree.
       "<backtab>" #'neotree-collapse-all
       "s-." #'neotree-hidden-file-toggle
+
+      ;; Swiper.
       "C-/" #'swiper
+
+      ;; System clipboard.
       "s-v" #'paste-from-system-clipboard
       "s-c" #'copy-region-to-system-clipboard
+
+      ;; Old habits die hard.
+      "s-," (lambda () (interactive) (find-file "~/.doom.d/config.el"))
       )
