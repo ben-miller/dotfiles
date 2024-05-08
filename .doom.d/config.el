@@ -102,6 +102,9 @@
       ;; Swiper.
       :desc "Swiper" "C-/" #'swiper
 
+      ;; Projectile
+      :desc "Find file" "s-o" #'+ivy/projectile-find-file
+
       ;; System clipboard.
       :desc "Paste from system clipboard" "s-v" #'paste-from-system-clipboard
       :desc "Copy to system clipboard" "s-c" #'copy-region-to-system-clipboard
