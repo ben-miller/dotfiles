@@ -1,3 +1,5 @@
+;; -*- no-byte-compile: t; -*-
+
 ;; Load config files in settings subdir.
 (load! "config/inbox.el")
 (load! "config/org-config.el")
