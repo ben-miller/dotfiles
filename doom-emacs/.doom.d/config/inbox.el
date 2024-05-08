@@ -108,3 +108,13 @@ If FROM is non nil, execute the sync of the entire buffer from trello."
     (if git-dir
         (expand-file-name git-dir)
       (error "Not inside a Git repository"))))
+
+(after! projectile
+  (setq projectile-known-projects '(
+                                    "~/.doom.d/"
+                                    "~/org"
+                                    "~/life"
+                                    "~/src/projects/java-dsa"
+                                    )
+        projectile-completion-system 'ivy)
+  )
