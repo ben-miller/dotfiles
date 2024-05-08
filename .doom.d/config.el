@@ -64,7 +64,8 @@
       :desc "Org refile" "d f" #'org-refile
       :desc "Show DOING items" "d d" (lambda () (interactive) (org-todo-list "DOING"))
       :desc "Show NEXT items" "d n" (lambda () (interactive) (org-todo-list "NEXT"))
-      :desc "Capture note to inbox as INBOX" "d i" (lambda () (interactive) (org-capture nil "i"))
+      :desc "Capture note to inbox as INBOX" "d k" (lambda () (interactive) (org-capture nil "i"))
+      :desc "Capture note to inbox as INBOX" "d I" (lambda () (interactive) (org-capture nil "i"))
       :desc "Capture note to inbox as DOING" "d D" (lambda () (interactive) (org-capture nil "d"))
       :desc "Capture note to inbox as NEXT" "d N" (lambda () (interactive) (org-capture nil "n"))
       :desc "Open inbox.org" "d i" (lambda () (interactive) (find-file "~/org/inbox.org"))
