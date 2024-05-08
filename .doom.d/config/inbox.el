@@ -99,15 +99,8 @@ If FROM is non nil, execute the sync of the entire buffer from trello."
 
 (defun gradle-run-from-root (task)
   "Run the Gradle task `task` from the top-level directory of the current Git repository."
-  (let ((default-directory (git-root-directory)))
+  (let ((default-directory (projectile-project-root)))
     (compile (concat "./gradlew " task))))
-
-(defun git-root-directory ()
-  "Get the top-level directory of the current Git repository."
-  (let ((git-dir (locate-dominating-file default-directory ".git")))
-    (if git-dir
-        (expand-file-name git-dir)
-      (error "Not inside a Git repository"))))
 
 (after! projectile
   (setq projectile-known-projects '(
