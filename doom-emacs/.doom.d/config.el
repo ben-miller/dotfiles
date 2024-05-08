@@ -172,6 +172,7 @@
       "d f" #'org-refile
       :desc "Edit emacs config" "d ," (lambda () (interactive) (find-file "~/.doom.d/config.el"))
       :desc "Dired" "SPC" #'dired
+      :desc "Magit commit -m 'Update'" "g k" #'magit-commit-update
       )
 
 (setq leetcode-prefer-language "java")
@@ -216,3 +217,8 @@
 (after! magit
   (map! :map magit-mode-map
         "<escape>" #'magit-mode-bury-buffer))
+
+(defun magit-commit-update ()
+  "Commit with message 'Update' in Magit."
+  (interactive)
+  (magit-commit-create `("-m" "Update")))
