@@ -86,7 +86,3 @@ If FROM is non nil, execute the sync of the entire buffer from trello."
     (let ((selection-value (buffer-substring-no-properties start end)))
       (x-set-selection 'CLIPBOARD selection-value)
       (message "Region copied to system clipboard"))))
-
-(defun org-emacs-todo-list ()
-    (interactive)
-  (find-file "~/org/emacs.org"))
