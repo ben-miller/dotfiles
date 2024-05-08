@@ -155,6 +155,8 @@
       "<backtab>" #'neotree-collapse-all
       "s-." #'neotree-hidden-file-toggle
       "C-/" #'swiper
+      :desc "Find function" "s-b" #'find-function
+      :desc "Go to source of function at point" "M-s-b" #'describe-function-at-point
       )
 
 (map! :leader
@@ -222,3 +224,8 @@
   "Commit with message 'Update' in Magit."
   (interactive)
   (magit-commit-create `("-m" "Update")))
+
+(defun describe-function-at-point ()
+  "Display the full documentation of the function at point."
+  (interactive)
+  (describe-function (function-called-at-point)))
