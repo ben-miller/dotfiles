@@ -1,4 +1,3 @@
-;; Org directory.
 (setq org-directory "~/org/")
 
 (after! org
