@@ -1,6 +1,6 @@
 ;; Load config files in settings subdir.
-(load! "lib/inbox.el")
-(load! "lib/org-config.el")
+(load! "config/inbox.el")
+(load! "config/org-config.el")
 
 ;;
 ;; Emacs / doom emacs settings.
@@ -72,7 +72,7 @@
       :desc "Open emacs.org" "d e" (lambda () (interactive) (find-file "~/org/emacs.org"))
 
       ;; Frequently edited files (SPC k).
-      :desc "Edit config" "k k" (lambda () (interactive) (find-file "~/.doom.d/config.el"))
+      :desc "Edit config" "k k" (lambda () (interactive) (find-file "~/.doom.d/config/inbox.el"))
       )
 
 ;; Non-SPC key bindings.
