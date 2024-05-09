@@ -114,3 +114,6 @@ If FROM is non nil, execute the sync of the entire buffer from trello."
 
 (add-hook 'doom-after-init-hook
           (lambda () (doom/quickload-session t)))
+
+(after! treemacs
+  (setq treemacs-width 30))
