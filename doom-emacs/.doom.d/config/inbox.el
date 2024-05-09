@@ -111,3 +111,6 @@ If FROM is non nil, execute the sync of the entire buffer from trello."
                                     )
         projectile-completion-system 'ivy)
   )
+
+(add-hook 'doom-after-init-hook
+          (lambda () (doom/quickload-session t)))
