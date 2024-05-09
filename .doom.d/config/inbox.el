@@ -1,3 +1,5 @@
+;; -*- no-byte-compile: t; -*-
+;;
 ;; Unsorted config functions, etc.
 
 (defun open-scratch-in-new-tab ()
