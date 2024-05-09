@@ -111,7 +111,9 @@ If FROM is non nil, execute the sync of the entire buffer from trello."
                                     "~/life"
                                     "~/src/projects/java-dsa"
                                     )
-        projectile-completion-system 'ivy)
+        projectile-completion-system 'ivy
+        projectile-auto-discover nil
+        )
   )
 
 (add-hook 'doom-after-init-hook
@@ -128,7 +130,7 @@ If FROM is non nil, execute the sync of the entire buffer from trello."
 
 (after! treemacs
   (setq treemacs-persist-file (concat doom-cache-dir "treemacs-persist"))
-  (treemacs-follow-mode t)
+  (treemacs-follow-mode nil)
   (treemacs-filewatch-mode t)
   (treemacs-git-mode 'deferred))
 
@@ -137,3 +139,7 @@ If FROM is non nil, execute the sync of the entire buffer from trello."
         projectile-known-projects-file (concat doom-cache-dir "projectile.projects")
         projectile-enable-caching t))
 
+;(defun open-config-file (filename)
+;  (projectile-switch-project "~/.doom.d/")
+;  (find-file filename)
+;  )
