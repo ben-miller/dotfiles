@@ -3,4 +3,5 @@
 docker
 taskwarrior/.task
 timewarrior/.timewarrior/data
+doom-emacs
 
