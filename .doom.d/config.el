@@ -22,6 +22,11 @@
 ;; Settings for random packages.
 ;;
 
+;;
+;; Enable projectile caching.
+;;
+(setq projectile-enable-caching t)
+
 ;; Ivy
 (after! ivy
   (setq ivy-use-virtual-buffers t
