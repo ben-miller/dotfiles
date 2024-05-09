@@ -7,3 +7,4 @@
 (package! expand-region)
 (package! hyperbole)
 (package! org-trello)
+(package! persp-mode)

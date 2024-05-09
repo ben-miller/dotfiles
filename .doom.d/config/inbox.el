@@ -119,3 +119,21 @@ If FROM is non nil, execute the sync of the entire buffer from trello."
 
 (after! treemacs
   (setq treemacs-width 30))
+
+(after! persp-mode
+  (setq persp-autosave-fname "autosave"
+        persp-save-dir (concat doom-cache-dir "workspaces/")
+        persp-auto-save-opt 1
+        persp-auto-resume-time 0))
+
+(after! treemacs
+  (setq treemacs-persist-file (concat doom-cache-dir "treemacs-persist"))
+  (treemacs-follow-mode t)
+  (treemacs-filewatch-mode t)
+  (treemacs-git-mode 'deferred))
+
+(after! projectile
+  (setq projectile-cache-file (concat doom-cache-dir "projectile.cache")
+        projectile-known-projects-file (concat doom-cache-dir "projectile.projects")
+        projectile-enable-caching t))
+
