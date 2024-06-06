@@ -1,4 +1,5 @@
 package direnv
 package https://github.com/PatrickF1/fzf.fish
 package rbenv
+theme clearance
 theme default

@@ -208,7 +208,8 @@ config.keys = {
 }
 
 --config.color_scheme = 'dayfox'
-config.color_scheme = 'Atelier Estuary Light (base16)'
+--config.color_scheme = 'Atelier Estuary Light (base16)'
+config.color_scheme = 'Mariana'
 
 config.window_padding = {
   left = 0,
@@ -220,7 +221,6 @@ config.window_padding = {
 config.font_size = 16.0
 
 config.colors = {
-  background = "#ffffff",
   tab_bar = {
     background = "#f0f0f0",
     active_tab = {
