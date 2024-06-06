@@ -217,7 +217,10 @@ config.window_padding = {
   bottom = 0,
 }
 
+config.font_size = 16.0
+
 config.colors = {
+  background = "#ffffff",
   tab_bar = {
     background = "#f0f0f0",
     active_tab = {
