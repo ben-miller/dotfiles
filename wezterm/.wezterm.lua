@@ -209,7 +209,8 @@ config.keys = {
 
 --config.color_scheme = 'dayfox'
 --config.color_scheme = 'Atelier Estuary Light (base16)'
-config.color_scheme = 'Mariana'
+--config.color_scheme = 'Mariana'
+config.color_scheme = 'Everforest Dark (Gogh)'
 
 config.window_padding = {
   left = 0,

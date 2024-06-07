@@ -13,9 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
-        "https://github.com/rebelot/kanagawa.nvim",
+        "https://github.com/neanias/everforest-nvim",
         config = function()
-            vim.cmd.colorscheme("kanagawa-dragon")
+            vim.cmd.colorscheme("everforest")
         end
     },
     {
