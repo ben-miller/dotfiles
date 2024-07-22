@@ -63,3 +63,17 @@ end
 
 rbenv init - fish | source
 
+set -x PATH $HOME/.pyenv/bin $PATH
+status --is-interactive; and . (pyenv init --path | psub)
+status --is-interactive; and . (pyenv init - | psub)
+status --is-interactive; and . (pyenv virtualenv-init - | psub)
+
+function tmux-a
+    if test (count $argv) -eq 0
+        echo "Usage: tmux-a <session-name>"
+        return 1
+    end
+
+    set session_name $argv[1]
+    tmux attach-session -t $session_name 2>/dev/null; or tmux new-session -s $session_name
+end
