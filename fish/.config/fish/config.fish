@@ -43,9 +43,9 @@ case Linux
   setxkbmap -layout us -option ctrl:nocaps
   export JAVA_HOME=/usr/lib/jvm/jdk-16.0.1/
 case Darwin
-  alias ls='exa'
-  alias ll='exa -la'
-  alias tree='exa -Ta -I .git'
+  alias ls='eza'
+  alias ll='eza -la'
+  alias tree='eza -Ta -I .git'
 end
 
 function git_clean_branches
