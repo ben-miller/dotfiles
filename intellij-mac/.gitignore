@@ -1,9 +1,0 @@
-# Ignore everything inside JetBrains application support directories
-Library/Application Support/JetBrains/*/*
-Library/Application Support/JetBrains/bl
-Library/Application Support/JetBrains/crl
-
-# Don't ignore keymaps directories or their content
-!Library/Application Support/JetBrains/**/keymaps
-!Library/Application Support/JetBrains/**/keymaps/*.xml
-
