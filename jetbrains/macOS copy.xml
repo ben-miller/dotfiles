@@ -12,7 +12,6 @@
   <action id="Diff.ShowDiff" />
   <action id="EditorDuplicate" />
   <action id="EditorLineEnd">
-    <keyboard-shortcut first-keystroke="end" />
     <keyboard-shortcut first-keystroke="ctrl e" />
   </action>
   <action id="EditorLineEndWithSelection">
@@ -20,7 +19,6 @@
   </action>
   <action id="EditorLineStart">
     <keyboard-shortcut first-keystroke="home" />
-    <keyboard-shortcut first-keystroke="ctrl a" />
   </action>
   <action id="EditorLineStartWithSelection">
     <keyboard-shortcut first-keystroke="shift home" />
@@ -35,7 +33,6 @@
   <action id="GotoRow" />
   <action id="NavBar-selectHome">
     <keyboard-shortcut first-keystroke="home" />
-    <keyboard-shortcut first-keystroke="ctrl a" />
   </action>
   <action id="NextSplitter">
     <keyboard-shortcut first-keystroke="meta l" />

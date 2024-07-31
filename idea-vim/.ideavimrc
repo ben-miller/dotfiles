@@ -1,2 +1,15 @@
 set ignorecase
+map <C-a> 0
+map <C-e> $
+
+" Insert mode mappings for Emacs-like navigation
+imap <C-p> <C-o>k
+imap <C-n> <C-o>j
+imap <C-b> <C-o>h
+imap <C-f> <C-o>l
+imap <C-a> <C-o>0
+imap <C-e> <C-o>$
+imap <C-k> <Esc>lD
+imap <C-d> <C-o>x
+
 
