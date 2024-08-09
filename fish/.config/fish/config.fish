@@ -22,6 +22,7 @@ set -gx PATH /Applications/SuperCollider.app/Contents/MacOS/ $PATH
 set -gx PATH /Applications/Gnucash.app/Contents/MacOS/ $PATH
 set -gx PATH /Applications/Gnucash.app/Contents/Resources/bin/ $PATH
 set -gx PATH /Users/bmiller/.emacs.d/bin $PATH
+set -gx PATH /Users/bmiller/.local/bin $PATH
 
 # Direnv
 direnv hook fish | source
@@ -54,19 +55,7 @@ end
 
 eval (/opt/homebrew/bin/brew shellenv)
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /opt/homebrew/Caskroom/miniconda/base/bin/conda
-    eval /opt/homebrew/Caskroom/miniconda/base/bin/conda "shell.fish" "hook" $argv | source
-end
-# <<< conda initialize <<<
-
 rbenv init - fish | source
-
-set -x PATH $HOME/.pyenv/bin $PATH
-status --is-interactive; and . (pyenv init --path | psub)
-status --is-interactive; and . (pyenv init - | psub)
-status --is-interactive; and . (pyenv virtualenv-init - | psub)
 
 function tmux-a
     if test (count $argv) -eq 0
