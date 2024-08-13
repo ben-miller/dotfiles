@@ -57,6 +57,9 @@
     <keyboard-shortcut first-keystroke="f9" />
   </action>
   <action id="RunDashboard.CopyConfiguration" />
+  <action id="SelectInProjectView">
+    <keyboard-shortcut first-keystroke="alt h" />
+  </action>
   <action id="SendEOF" />
   <action id="SetShortcutAction" />
   <action id="ShowIntentionActions" />
@@ -72,14 +75,12 @@
   <action id="com.mnw.tabmover.actions.MoveTabDownAction">
     <keyboard-shortcut first-keystroke="meta alt right" />
   </action>
-  <action id="com.mnw.tabmover.actions.MoveTabToNextSplitter">
+  <action id="com.mnw.tabmover.actions.MoveTabToNextWindow">
     <keyboard-shortcut first-keystroke="shift meta right" />
   </action>
-  <action id="com.mnw.tabmover.actions.MoveTabToNextWindow" />
-  <action id="com.mnw.tabmover.actions.MoveTabToPreviousSplitter">
+  <action id="com.mnw.tabmover.actions.MoveTabToPreviousWindow">
     <keyboard-shortcut first-keystroke="shift meta left" />
   </action>
-  <action id="com.mnw.tabmover.actions.MoveTabToPreviousWindow" />
   <action id="com.mnw.tabmover.actions.MoveTabUpAction">
     <keyboard-shortcut first-keystroke="meta alt left" />
   </action>
