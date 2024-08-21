@@ -37,7 +37,6 @@ alias sv='git save'
 alias vi=/opt/homebrew/bin/nvim
 alias pn=pnpm
 alias px=pnpx
-alias npm=pnpm
 
 switch (uname)
 case Linux
@@ -66,3 +65,10 @@ function tmux-a
     set session_name $argv[1]
     tmux attach-session -t $session_name 2>/dev/null; or tmux new-session -s $session_name
 end
+
+# pnpm
+set -gx PNPM_HOME "/Users/bmiller/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
