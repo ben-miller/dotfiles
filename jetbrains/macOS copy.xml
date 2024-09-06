@@ -41,6 +41,7 @@
     <mouse-shortcut keystroke="button5" />
   </action>
   <action id="Github.PullRequest.Diff.Comment.Create" />
+  <action id="GotoClass" />
   <action id="GotoLine" />
   <action id="GotoNextError">
     <keyboard-shortcut first-keystroke="f2" />
@@ -78,6 +79,9 @@
     <keyboard-shortcut first-keystroke="f9" />
   </action>
   <action id="RunDashboard.CopyConfiguration" />
+  <action id="SearchEverywhere">
+    <keyboard-shortcut first-keystroke="meta o" />
+  </action>
   <action id="SelectInProjectView">
     <keyboard-shortcut first-keystroke="alt h" />
   </action>
