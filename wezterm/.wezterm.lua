@@ -222,27 +222,28 @@ config.window_padding = {
 config.font_size = 16.0
 
 config.colors = {
+  background = "#414141",
   tab_bar = {
-    background = "#f0f0f0",
+    background = "#3c3c3c",  -- Darker, warmer gray to sync better with the background
     active_tab = {
-      bg_color = "#f0f0f0",
-      fg_color = "#000000",
+      bg_color = "#5a5a5a",  -- Slightly darker and warmer gray
+      fg_color = "#e0e0e0",  -- Softer white to reduce contrast
       intensity = "Normal",
       underline = "None",
       italic = false,
       strikethrough = false,
     },
     inactive_tab = {
-      bg_color = "#cccccc",
-      fg_color = "#808080",
+      bg_color = "#4a4a4a",  -- Darker and warmer gray for inactive tabs
+      fg_color = "#a0a0a0",  -- Softer gray for text
       intensity = "Normal",
       underline = "None",
       italic = false,
       strikethrough = false,
     },
     inactive_tab_hover = {
-      bg_color = "#f0f0f0",
-      fg_color = "#000000",
+      bg_color = "#5a5a5a",  -- Match active tab color to avoid stark contrast
+      fg_color = "#e0e0e0",  -- Softer white to match active tab
       intensity = "Normal",
       underline = "None",
       italic = false,

@@ -1,4 +1,9 @@
 <keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
+  <action id="$Redo">
+    <keyboard-shortcut first-keystroke="shift meta z" />
+    <keyboard-shortcut first-keystroke="shift alt back_space" />
+    <keyboard-shortcut first-keystroke="ctrl r" />
+  </action>
   <action id="Back">
     <keyboard-shortcut first-keystroke="meta open_bracket" />
     <mouse-shortcut keystroke="button4" />
@@ -16,6 +21,9 @@
   <action id="DatabaseView.PropertiesAction" />
   <action id="DatabaseView.Tools" />
   <action id="Diff.ShowDiff" />
+  <action id="Editor Redo">
+    <keyboard-shortcut first-keystroke="ctrl r" />
+  </action>
   <action id="EditorDuplicate" />
   <action id="EditorLineEnd">
     <keyboard-shortcut first-keystroke="end" />
@@ -78,6 +86,7 @@
   <action id="Resume">
     <keyboard-shortcut first-keystroke="f9" />
   </action>
+  <action id="Run" />
   <action id="RunDashboard.CopyConfiguration" />
   <action id="SearchEverywhere">
     <keyboard-shortcut first-keystroke="meta o" />
@@ -102,6 +111,11 @@
   <action id="Terminal.ClearBuffer">
     <keyboard-shortcut first-keystroke="meta k" />
   </action>
+  <action id="Terminal.SearchInCommandHistory" />
+  <action id="Terminal.SplitVertically">
+    <keyboard-shortcut first-keystroke="meta d" />
+  </action>
+  <action id="UsageFiltering.ReadAccess" />
   <action id="Vcs.Log.FocusTextFilter" />
   <action id="XDebugger.CopyWatch" />
   <action id="com.mnw.tabmover.actions.MoveTabDownAction">
